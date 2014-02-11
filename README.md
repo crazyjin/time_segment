@@ -21,11 +21,18 @@ You'll get some strange results when your time segment include Feruary or a leap
     "2 months" == TimeSegment.new(Time.new(2013,12,12,12,12,12),Time.new(2014,3,12,12,12,12)).round
 
 ## Usage
+First, set locale to what you want:
+    
+    config.i18n.default_locale = "zh-CN"
+
+Enjoy it:
+
     TimeSegment(Time.now,29.days.ago).round => "29 days"
     TimeSegment(Time.now,43.days.ago).round => "1 month"
     TimeSegment(Time.now,367.days.ago).round => "about 1 year"
     
     blog.created_at.time_segment_to_now.round
+    blog.created_at.time_segment_to(another_time).round
 
 
     TimeSegment(Time.now,29.days.ago).in_days => 29
