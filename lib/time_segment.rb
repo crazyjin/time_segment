@@ -69,15 +69,18 @@ class TimeSegment
     end
   end
   
-  def round
-    if 0 < self.in_years then "#{@years} years"
-    elsif 0 < self.in_months then "#{@in_months} months"
-    elsif 0 < self.in_days then "#{@in_days} days"
-    elsif 0 < self.hours then "#{@in_hours} hours"
-    elsif 0 < self.minutes then "#{@in_minutes} minutes"
-    elsif 0 < self.seconds then "#{@in_seconds} seconds"
-    else
-      "but now"
+  def round options = {}
+    options = { scope: :'datetime.distance_in_words' }.merge!(options)
+
+    I18n.with_options :locale => options[:locale], :scope => options[:scope] do |i18n|
+      if 0 < self.in_years then i18n.t :over_x_years, :count => @years
+      elsif 0 < self.in_months then i18n.t :x_months, :count => @in_months
+      elsif 0 < self.in_days then i18n.t :x_days, :count => @in_days
+      elsif 0 < self.in_hours then i18n.t :about_x_hours, :count => @in_hours
+      elsif 0 < self.in_minutes then i18n.t :x_minutes, :count => @in_minutes
+      elsif 0 < self.in_seconds then i18n.t :x_seconds, :count => @in_seconds
+      else i18n.t :less_than_x_seconds, :count => 1
+      end
     end
   end
 end

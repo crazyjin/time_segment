@@ -11,10 +11,6 @@ class TimeSegmentTest < Test::Unit::TestCase
     @ts = TimeSegment.new(@from,@to)
   end
 
-  def test_round
-    assert_equal("1 years", @ts.round)
-  end
-
   def test_in_years
     assert_equal(1,@ts.in_years)
   end
