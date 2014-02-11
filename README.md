@@ -24,6 +24,7 @@ You'll get some strange results when your time segment include Feruary or a leap
     TimeSegment(Time.now,29.days.ago).round => "29 days"
     TimeSegment(Time.now,43.days.ago).round => "1 month"
     TimeSegment(Time.now,367.days.ago).round => "about 1 year"
+    
     blog.created_at.time_segment_to_now.round
 
 
