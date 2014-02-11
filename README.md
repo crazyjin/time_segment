@@ -18,7 +18,7 @@ According rules of leap year,  year and month, respectively, has been given an a
     
 You'll get some strange results when your time segment include Feruary or a leap year. For example:
 
-    "2 months" == TimeSegment.new(Time.new(2013,12,12,12,12,12),Time.new(2014,3,12,12,12,12))
+    "2 months" == TimeSegment.new(Time.new(2013,12,12,12,12,12),Time.new(2014,3,12,12,12,12)).round
 
 ## Usage
     TimeSegment(Time.now,29.days.ago).round => "29 days"
