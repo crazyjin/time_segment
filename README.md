@@ -27,9 +27,9 @@ First, set locale to what you want:
 
 Enjoy it:
 
-    TimeSegment(Time.now,29.days.ago).round => "29 days"
-    TimeSegment(Time.now,43.days.ago).round => "1 month"
-    TimeSegment(Time.now,367.days.ago).round => "about 1 year"
+    TimeSegment(Time.now,29.days.ago).round => "29 天"
+    TimeSegment(Time.now,43.days.ago).round => "1 月"
+    TimeSegment(Time.now,367.days.ago).round => "大约 1 年"
     
     blog.created_at.time_segment_to_now.round
     blog.created_at.time_segment_to(another_time).round
