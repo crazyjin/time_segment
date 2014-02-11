@@ -1,6 +1,4 @@
 #time_segment
-============
-
 TimeSegment is a substitute of DateHelper distance_of_time_in_words and makes your time more readable.
 
 ## Installation
@@ -14,9 +12,12 @@ And then execute:
 
 ## Conventions
 According rules of leap year,  year and month, respectively, has been given an average value.
+
     1 year = 365.2425 days
     1 month = 30.436875 days
+    
 You'll get some strange results when your time segment include Feruary or a leap year. For example:
+
     "2 months" == TimeSegment.new(Time.new(2013,12,12,12,12,12),Time.new(2014,3,12,12,12,12))
 
 ## Usage
