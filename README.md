@@ -27,20 +27,20 @@ First, set locale to what you want:
 
 Enjoy it:
 
-    TimeSegment(Time.now,29.days.ago).round => "29 天"
-    TimeSegment(Time.now,43.days.ago).round => "1 月"
-    TimeSegment(Time.now,367.days.ago).round => "大约 1 年"
+    TimeSegment(29.days.ago,Time.now).round => "29 天"
+    TimeSegment(43.days.ago,Time.now).round => "1 月"
+    TimeSegment(367.days.ago,Time.now).round => "大约 1 年"
     
     blog.created_at.time_segment_to_now.round
     blog.created_at.time_segment_to(another_time).round
 
 
-    TimeSegment(Time.now,29.days.ago).in_days => 29
-    TimeSegment(Time.now,29.days.ago).in_months => 0
-    TimeSegment(Time.now,43.days.ago).in_days => 43
-    TimeSegment(Time.now,43.days.ago).in_months => 1
-    TimeSegment(Time.now,367.days.ago).in_years => 1
-    TimeSegment(Time.now,364.days.ago).in_years => 0
+    TimeSegment(29.days.ago,Time.now).in_days => 29
+    TimeSegment(29.days.ago,Time.now).in_months => 0
+    TimeSegment(43.days.ago,Time.now).in_days => 43
+    TimeSegment(43.days.ago,Time.now).in_months => 1
+    TimeSegment(367.days.ago,Time.now).in_years => 1
+    TimeSegment(364.days.ago,Time.now).in_years => 0
 
 
     ts = TimeSegment.new(Time.new(2013,1,2,3,4,5),Time.new(2014,2,3,4,5,6))
