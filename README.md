@@ -31,8 +31,8 @@ Enjoy it:
     TimeSegment(43.days.ago,Time.now).round => "1 月"
     TimeSegment(367.days.ago,Time.now).round => "大约 1 年"
     
-    blog.created_at.time_segment_to_now.round
-    blog.created_at.time_segment_to(another_time).round
+    blog.created_at.time_segment_to_now.round => "3 月"
+    blog.created_at.time_segment_to(another_time).round => "15 天"
 
 
     TimeSegment(29.days.ago,Time.now).in_days => 29
